@@ -26,8 +26,10 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
+  indexSortableFields: true,
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
+    transactionOptions: false,
   }),
   sharp,
   plugins: [
